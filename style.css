@@ -517,7 +517,31 @@ section {
     font-size: 0.85rem;
     border-top: 1px solid var(--border-color);
 }
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: white !important; /* Overriding default link color */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: none;
+}
 
+.cv-button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.cv-button i {
+    font-size: 1rem;
+}
 /* --- Mobile Queries --- */
 @media (max-width: 768px) {
     #hero-section {
