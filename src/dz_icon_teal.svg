@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Subtle glow effect -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background circle -->
+  <circle cx="100" cy="100" r="90" fill="#020307" stroke="#01D5A2" stroke-width="3"/>
+
+  <!-- DZ Text in teal -->
+  <text x="50%" y="55%" 
+        font-family="'Inter', 'SF Pro Display', -apple-system, sans-serif" 
+        font-size="85" 
+        font-weight="800" 
+        fill="#01D5A2" 
+        text-anchor="middle" 
+        dominant-baseline="middle"
+        letter-spacing="-3"
+        filter="url(#glow)">
+    DZ
+  </text>
+</svg>
