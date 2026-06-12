@@ -1,299 +1,764 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dawood Zulfiqar | Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Dawood Zulfiqar. I am a web developer specializing in HTML, CSS, and building web applications and android applications.">
-    <meta name="keywords" content="Dawood Zulfiqar, Dawood Zulfiqar portfolio, web developer, frontend developer, android app developer">
+    <title>Ch Muhammad Dawood | AI/ML Engineer & Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Ch Muhammad Dawood — AI/ML Engineer, Full Stack (MERN), and Android Developer. BS Computer Science at FAST NUCES. Building intelligent, scalable web and mobile applications.">
+    <meta name="keywords" content="Ch Muhammad Dawood, Dawood Zulfiqar, AI ML engineer Pakistan, FAST NUCES, full stack developer, MERN, android developer, machine learning portfolio, XLM RoBERTa, KhayaalNama, Suraagh">
+    <meta name="author" content="Ch Muhammad Dawood">
     <link rel="canonical" href="https://dawoodzulfiqar.vercel.app/">
-    <link rel="icon" type="image/x-icon" href="src/dz_icon_teal.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ch Muhammad Dawood — AI/ML Engineer & Full Stack Developer">
+    <meta property="og:description" content="AI/ML, MERN, and Android. BS Computer Science at FAST NUCES.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dawoodzulfiqar.vercel.app/">
+    <meta property="og:image" content="https://dawoodzulfiqar.vercel.app/src/dawood1.jpeg">
+
+    <link rel="icon" type="image/svg+xml" href="src/dz_icon_teal.svg">
+    <script>
+        // Inline theme read — avoids flash of wrong theme on first paint.
+        (function () {
+            try {
+                var t = localStorage.getItem('cmd-portfolio-theme');
+                if (t === 'light' || t === 'dark') {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+            } catch (e) { /* localStorage unavailable */ }
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
     <meta name="google-site-verification" content="1TsxKWwb_Iz0aekEH80qFRUEWsYqf022aXerYaI_E-g" />
 </head>
 <body>
 
-    <input type="checkbox" id="theme-toggle">
+<!-- ============ NAVBAR ============ -->
+<nav id="siteNav" class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+        <a class="nav-logo" href="#hero" aria-label="Home">
+            <img src="src/dz_icon_teal.svg" alt="" width="36" height="36">
+            <span class="nav-logo-text">Dawood<span class="dot">.</span></span>
+        </a>
 
-    <div class="content-wrapper">
+        <button id="menuToggle" class="nav-burger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
-        <header id="hero-section">
-            <nav id="navbar">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="src/dz_icon_teal.svg" alt="DZ" width="50" height="50">
-                    </a>
-                </div>
-                <div class="nav-links">
-                    <a href="#hero-section">Home</a>
-                    <a href="#About">About</a>
-                    <a href="#Education">Education</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#Projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#achievements">Awards</a>
+            <a href="#contact">Contact</a>
+            <button id="themeToggle" class="nav-theme" aria-label="Toggle theme">
+                <span class="nav-theme-icon">
+                    <i class="fa-solid fa-moon m-icon"></i>
+                    <i class="fa-solid fa-sun s-icon"></i>
+                </span>
+                <span class="nav-theme-label">
+                    <span class="when-light">Switch to dark</span>
+                    <span class="when-dark">Switch to light</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</nav>
 
-            <div class="hero-inner">
-                <div class="intro">
-                    <h2>HI! I'M DAWOOD ZULFIQAR</h2>
-                    <p class="green">Web & Application Developer</p>
-                    <p>Building Scalable Web and Android Solutions with AI Integration</p>
+<!-- ============ HERO ============ -->
+<header id="hero" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+        <p class="hero-eyebrow" data-reveal>
+            <span class="status-dot"></span> Available for AI/ML & Full-Stack work
+        </p>
+        <h1 class="hero-title" data-reveal>
+            Hi, I'm <span class="accent">Ch Muhammad Dawood</span>
+        </h1>
+        <p class="hero-role" data-reveal>
+            AI/ML Engineer · Full Stack (MERN) · Android Developer
+        </p>
+        <p class="hero-sub" data-reveal>
+            I build intelligent, end-to-end products — from fine-tuned language models for Urdu literature to multi-platform hospitality systems.
+        </p>
+        <div class="hero-cta" data-reveal>
+            <a class="btn btn-primary" href="#projects">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn btn-ghost" href="src/Ch Muhammad Dawood CV.pdf (5).pdf" download="Ch_Muhammad_Dawood_CV.pdf">
+                <i class="fa-solid fa-download"></i> Download CV
+            </a>
+        </div>
+
+        <div class="hero-stats" data-reveal>
+            <div class="stat">
+                <span class="stat-num">3.7</span>
+                <span class="stat-label">CGPA · FAST NUCES</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">4.00</span>
+                <span class="stat-label">Rector's List SGPA</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">9+</span>
+                <span class="stat-label">Shipped Projects</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span></span>
+    </a>
+</header>
+
+<main>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">01.</span>
+            <h2 class="section-title">About</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-photo" data-reveal>
+                <img src="src/dawood1.jpeg" alt="Ch Muhammad Dawood" loading="lazy">
+                <div class="about-photo-badge">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    BS CS · FAST NUCES
                 </div>
             </div>
 
-            <div class="scroll-indicator">
-                <a href="#About" style="color: azure;"><i class="fa-solid fa-chevron-down"></i></a>
+            <div class="about-copy" data-reveal>
+                <p>
+                    I'm <strong>Ch Muhammad Dawood</strong>, a final-year Computer Science student at
+                    <a href="https://lhr.nu.edu.pk/" target="_blank" rel="noopener">FAST NUCES</a>
+                    focused on <strong>AI/ML engineering</strong> and <strong>full-stack product development</strong>.
+                    I work across the stack — from fine-tuning transformer models on low-resource languages
+                    to shipping production MERN and Android applications.
+                </p>
+                <p>
+                    Most recently I built <strong>KhayaalNama</strong>, a journaling app that predicts mental-health
+                    signals from Roman-Urdu text using a fine-tuned XLM RoBERTa model, and <strong>Suraagh</strong>,
+                    an AI-driven lost-and-found platform with image and text matching.
+                </p>
+                <p>
+                    Off-screen I read and write Urdu poetry, lead the
+                    <strong>FAST Literary Society</strong>, and pick up new languages for fun.
+                </p>
+
+                <div class="role-pills">
+                    <span class="role-pill"><i class="fa-solid fa-brain"></i> AI/ML Engineer</span>
+                    <span class="role-pill"><i class="fa-solid fa-layer-group"></i> Full Stack (MERN)</span>
+                    <span class="role-pill"><i class="fa-brands fa-android"></i> Android Developer</span>
+                    <span class="role-pill"><i class="fa-solid fa-pen-nib"></i> Poet</span>
+                </div>
             </div>
-        </header>
+        </div>
+    </section>
 
-        <main id="main-content">
-            
-            <section id="About">
-                <h2 class="section-title">About Me</h2>
-                <div class="About-me">
-                    <img src="src/dawood1.jpeg" height="170" width="170" alt="Dawood Zulfiqar">
-                    <div class="detail">
-                        <p>
-                            Hi there! I'm <strong>Dawood</strong>, a Full Stack Web and Application Developer currently studying in my 3rd year at <a href="https://lhr.nu.edu.pk/">FAST NUCES</a> with a passion for building 
-                            seamless digital experiences. I thrive on the positive energy of learning new things and turning complex 
-                            problems into elegant code.
-                        </p>
-                        <p>
-                            When I’m not behind the screen, I’m usually immersed in the world of words—<strong>reading and writing poetry</strong>—or 
-                            challenging myself by <strong>learning new languages</strong>. I believe in keeping the vibe good, 
-                            the mind sharp, and the code clean!
-                        </p>
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section section-alt">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">02.</span>
+            <h2 class="section-title">Skills &amp; Stack</h2>
+            <p class="section-lede">
+                Primary focus on <strong>AI/ML</strong>, paired with a strong full-stack and systems foundation.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <article class="skill-cat skill-cat--featured" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-solid fa-brain"></i></span>
+                    <div>
+                        <h3>AI / ML Engineering</h3>
+                        <p>Primary focus</p>
                     </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">Python</li>
+                    <li class="chip">NumPy</li>
+                    <li class="chip">Pandas</li>
+                    <li class="chip">Matplotlib</li>
+                    <li class="chip">TensorFlow</li>
+                    <li class="chip">XLM RoBERTa</li>
+                    <li class="chip">Model Training &amp; Evaluation</li>
+                    <li class="chip">Data Preprocessing</li>
+                    <li class="chip">Feature Engineering</li>
+                    <li class="chip">Deep Learning Basics</li>
+                    <li class="chip">REST APIs</li>
+                </ul>
+            </article>
 
-                    <div class="proclamations-box">
-                        <h3>MY ROLES:</h3>
-                        <div class="proclamations-grid">
-                            <div class="proclaim-item">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <span>Full Stack Dev</span>
-                            </div>
-                            <div class="proclaim-item">
-                                <i class="fa-solid fa-code"></i>
-                                <span>App Developer</span>
-                            </div>
-                            <div class="proclaim-item">
-                                <i class="fa-solid fa-pen-nib"></i>
-                                <span>Poet</span>
-                            </div>
+            <article class="skill-cat" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-solid fa-globe"></i></span>
+                    <div>
+                        <h3>Web Development</h3>
+                        <p>MERN stack</p>
+                    </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">React.js</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">Express.js</li>
+                    <li class="chip">MongoDB</li>
+                    <li class="chip">HTML5</li>
+                    <li class="chip">CSS3</li>
+                    <li class="chip">JavaScript</li>
+                </ul>
+            </article>
+
+            <article class="skill-cat" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-brands fa-android"></i></span>
+                    <div>
+                        <h3>Android Development</h3>
+                        <p>Native &amp; backend</p>
+                    </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">Java</li>
+                    <li class="chip">XML</li>
+                    <li class="chip">Firebase</li>
+                    <li class="chip">SQLite</li>
+                </ul>
+            </article>
+
+            <article class="skill-cat" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-solid fa-database"></i></span>
+                    <div>
+                        <h3>Databases</h3>
+                        <p>Relational &amp; NoSQL</p>
+                    </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">MySQL</li>
+                    <li class="chip">MSSQL</li>
+                    <li class="chip">MongoDB</li>
+                    <li class="chip">Firebase</li>
+                    <li class="chip">SQLite</li>
+                </ul>
+            </article>
+
+            <article class="skill-cat" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-solid fa-microchip"></i></span>
+                    <div>
+                        <h3>Systems &amp; Graphics</h3>
+                        <p>Low-level + C++</p>
+                    </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">C++</li>
+                    <li class="chip">SFML</li>
+                    <li class="chip">Intel 8088 Assembly</li>
+                </ul>
+            </article>
+
+            <article class="skill-cat" data-reveal>
+                <header class="skill-cat-head">
+                    <span class="skill-cat-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                    <div>
+                        <h3>Foundations</h3>
+                        <p>CS fundamentals</p>
+                    </div>
+                </header>
+                <ul class="chip-list">
+                    <li class="chip">Data Structures</li>
+                    <li class="chip">Algorithms</li>
+                    <li class="chip">Object-Oriented Programming</li>
+                    <li class="chip">Problem Solving</li>
+                    <li class="chip">Relational Databases</li>
+                </ul>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!--
+        How to update project links later:
+        - Look for `data-github="..."` and `data-demo="..."` on each .project card.
+        - GitHub buttons are emitted from data-github; live-demo buttons from data-demo.
+        - Multiple images per project: add more <div class="gallery-slide"><img ...></div> inside .gallery-track.
+          Missing images are auto-hidden by script.js (graceful fallback). Use any aspect ratio — mobile screenshots welcome.
+    -->
+    <section id="projects" class="section">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">03.</span>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-lede">
+                AI/ML, full-stack web, Android, and a few systems-level builds.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- KhayaalNama — FEATURED (AI/ML hero project) -->
+            <!-- Phone screenshots: .project-media--mobile + dual <img> per slide.
+                 gallery-bg = blurred ambient backdrop; gallery-fg = the actual portrait screenshot. -->
+            <article class="project project--featured" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media project-media--mobile" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide">
+                            <img src="src/images/kn3.jpeg" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/kn3.jpeg" class="gallery-fg" alt="KhayaalNama screen 1" loading="lazy">
                         </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/kn5.jpeg" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/kn5.jpeg" class="gallery-fg" alt="KhayaalNama screen 2" loading="lazy">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/kn1.jpeg" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/kn1.jpeg" class="gallery-fg" alt="KhayaalNama screen 3" loading="lazy">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/kn2.jpeg" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/kn2.jpeg" class="gallery-fg" alt="KhayaalNama screen 4" loading="lazy">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/kn4.jpeg" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/kn4.jpeg" class="gallery-fg" alt="KhayaalNama screen 5" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                    <span class="featured-flag"><i class="fa-solid fa-star"></i> Featured · AI/ML</span>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">AI / ML · Mobile</span>
+                    <h3>KhayaalNama</h3>
+                    <p>
+                        A Roman-Urdu journaling application that predicts mental-health signals from free-form
+                        entries using a fine-tuned <strong>XLM RoBERTa</strong> transformer. Spans data collection,
+                        preprocessing, fine-tuning, evaluation, and integration into a writing-focused UI built
+                        around Urdu literature and poetry.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>Python</li><li>TensorFlow</li><li>XLM RoBERTa</li><li>Pandas</li><li>NLP</li>
+                    </ul>
+                    <div class="project-links">
+                        <span class="proj-tag proj-tag-private"><i class="fa-solid fa-lock"></i> Private — Research project</span>
                     </div>
                 </div>
-            </section>
+            </article>
 
-            <section id="Education">
-                <h2 class="section-title">Education</h2>
-                <div class="education-thread">
-                    
-                    <div class="edu-item">
-                        <div class="edu-dot"></div>
-                        <div class="edu-content">
-                            <span class="edu-year">2023 - 2027</span>
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <p class="edu-venue">FAST NUCES</p>
-                            <p>Focused on Full Stack development, AI algorithms, and software architecture with in-depth understanding of programming.</p>
-                        </div>
+            <!-- Suraagh — FEATURED (AI/ML Android) -->
+            <article class="project project--featured" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/suraagh_ultimate.jpg" alt="Suraagh main screen" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/suraagh_2.jpg" alt="Suraagh secondary screen" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/suraagh_3.jpg" alt="Suraagh chat screen" loading="lazy"></div>
                     </div>
-
-                    <div class="edu-item">
-                        <div class="edu-dot"></div>
-                        <div class="edu-content">
-                            <span class="edu-year">2021 - 2023</span>
-                            <h3>Higher Secondary School Certificate</h3>
-                            <p class="edu-venue">Government College University (GCU)</p>
-                            <p>Specialized in Pre-Engineering with a strong foundation in Mathematics and Physics.</p>
-                        </div>
-                    </div>
-
-                    <div class="edu-item">
-                        <div class="edu-dot"></div>
-                        <div class="edu-content">
-                            <span class="edu-year">2019 - 2021</span>
-                            <h3>Secondary School Certificate</h3>
-                            <p class="edu-venue">Divisional Public School (DPS), Model Town, Lahore</p>
-                            <p>Completed with a focus on Science subjects.</p>
-                        </div>
-                    </div>
-
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                    <span class="featured-flag"><i class="fa-solid fa-star"></i> Featured · AI/ML</span>
                 </div>
-            </section>
-
-            <section id="skills">
-                <h2 class="section-title">My Skills</h2>
-                <div class="skills-container">
-                    
-                    <div class="skill-card">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-                        <h3>Web Developer</h3>
-                        <p>Building responsive, modern websites using HTML, CSS, and React.</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-terminal"></i>
-                        </div>
-                        <h3>Software Developer</h3>
-                        <p>Designing robust applications and integrating AI solutions.</p>
-                    </div>
-
-                    <div class="skill-card">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-microchip"></i>
-                        </div>
-                        <h3>Programming Enthusiast</h3>
-                        <p>Creating scalable solutions for intricate technical challenges, prioritizing code maintainability and long-term system stability.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="Projects">
-                <h2 class="section-title">Featured Projects</h2>
-                
-                <div class="projects-grid">
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/suraagh_ultimate.jpg" alt="Suraagh App Interface">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Full Stack Android App</span>
-                            <h3>Suraagh (Lost and Found)</h3>
-                            <p><strong>Suraagh</strong> (meaning clue or trace) An AI-driven lost and found platform that automatically matches lost items with found reports using machine learning and facilitates secure in-app chat for retrieval.</p>
-                        </div>
-                    </div>
-
-                     <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/plateShare.png" alt="PlateShare Interface">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Web Application</span>
-                            <h3>PlateShare</h3>
-                            <p>PlateShare: A full-stack web application connecting restaurants with charities to redirect surplus food to the underprivileged through donations or low-cost sales.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/nexus-ultimate.jpg" alt="Innova Nexus Interface">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Full Stack Android App</span>
-                            <h3>InnovaNexus (Hotel Management App)</h3>
-                            <p>InnovaNexus: A comprehensive management portal for hotel owners to digitize their operations, enabling them to list properties, manage inventories, and handle booking approvals in real-time.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/stay_ultimate.jpg" alt="InnovaStay Interface">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Full Stack Android App</span>
-                            <h3>InnovaStay (Hotel Booking App)</h3>
-                            <p>InnovaStay: A feature-rich Android application for travelers that streamlines hotel discovery through advanced filtering by location and category, alongside a seamless booking request system.</p>
-                        </div>
-                    </div>
-                     
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/chess.gif" alt="Chess Game">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">C++ Game</span>
-                            <h3>Chess Game</h3>
-                            <p>C++ Chess Engine: Comprehensive Chess implementation featuring full game logic and an interactive UI that highlights all legal moves for any selected piece.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/candycrush.jpg" alt="Candy Crush Clone">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">C++ Game</span>
-                            <h3>Candy Crush Game</h3>
-                            <p>Candy Crush Clone: A feature-complete puzzle game including grid-based matching logic, cascading physics, and the implementation of all special power-up gems.</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="src/pacman.png" alt="Pacman Assembly Game">
-                            <div class="project-overlay">
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category">Assembly 8088</span>
-                            <h3>Pac-Man Game</h3>
-                            <p>8088 Pac-Man: A bare-metal recreation of the arcade classic written entirely in 8088 Assembly, showcasing low-level hardware manipulation and manual memory management.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-container">
-                    <div class="contact-card">
-                        <div class="icon-last">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        <h3>Let's Chat!</h3>
-                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-                        
-                        <div class="contact-links">
-                            <a href="mailto:chdawood.zulfiqar@gmail.com" class="contact-item">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Email Me</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/muhammad-dawood-b45266226/" target="_blank" class="contact-item">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" class="contact-item">
-                                <i class="fa-brands fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                        </div>
-                        <a href="src/Summary - Resume Now (1) (1).pdf" download="Dawood_Zulfiqar_CV" class="cv-button">
-                        <i class="fas fa-download"></i> Download CV
+                <div class="project-body">
+                    <span class="project-cat">AI Matching · Android</span>
+                    <h3>Suraagh <span class="muted-meta">— Lost &amp; Found</span></h3>
+                    <p>
+                        <strong>Suraagh</strong> (Urdu: <em>clue / trace</em>) is an AI-driven lost-and-found
+                        platform that automatically matches lost-item reports with found-item entries using
+                        image and textual matching algorithms, and connects the two parties through secure
+                        in-app chat for retrieval.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>Java</li><li>XML</li><li>Firebase</li><li>AI Matching</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
                         </a>
                     </div>
                 </div>
-            </section>
+            </article>
 
-            <footer class="site-footer">
-                <p>&copy; 2026 Dawood Zulfiqar. Keeping the code clean and the vibes good.</p>
-            </footer>
+            <!-- HostelNama — Live Demo (phone screenshots — uses mobile showcase) -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar" data-demo="https://hostel-nama.vercel.app">
+                <div class="project-media project-media--mobile" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide">
+                            <img src="src/images/Hostel_nama_1.png" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/Hostel_nama_1.png" class="gallery-fg" alt="HostelNama landing" loading="lazy">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/hoste_nama_2.png" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/hoste_nama_2.png" class="gallery-fg" alt="HostelNama listing" loading="lazy">
+                        </div>
+                        <div class="gallery-slide">
+                            <img src="src/images/hoste_nama_3.png" class="gallery-bg" alt="" aria-hidden="true">
+                            <img src="src/images/hoste_nama_3.png" class="gallery-fg" alt="HostelNama detail" loading="lazy">
+                        </div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">Full Stack Web</span>
+                    <h3>HostelNama</h3>
+                    <p>
+                        A deployed web platform that helps students discover and shortlist hostels in their city,
+                        with filterable search, listings, and a clean booking-enquiry flow.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>React</li><li>Node.js</li><li>Express</li><li>Supabase</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn proj-btn-primary" href="https://hostel-nama.vercel.app" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-            <label for="theme-toggle" class="theme-btn" title="Toggle Theme">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun"></i>
-            </label>
+            <!-- InnovaNexus -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/nexus-ultimate.jpg" alt="InnovaNexus dashboard" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/nexus_2.jpg" alt="InnovaNexus listing" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">Android · Hospitality</span>
+                    <h3>InnovaNexus</h3>
+                    <p>
+                        A management portal for hotel owners to digitize operations — listing properties,
+                        managing inventory, and handling booking approvals in real time.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>Java</li><li>XML</li><li>Firebase</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
 
-        </main>
-    </div> </body>
+            <!-- InnovaStay -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/stay_ultimate.jpg" alt="InnovaStay home" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/stay_2.jpg" alt="InnovaStay booking" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">Android · Hospitality</span>
+                    <h3>InnovaStay</h3>
+                    <p>
+                        A traveler-facing Android app that streamlines hotel discovery through filtering by
+                        location and category, alongside a frictionless booking-request system. Pairs with
+                        InnovaNexus to form a complete hospitality ecosystem.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>Java</li><li>XML</li><li>Firebase</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PlateShare -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/plateShare.png" alt="PlateShare interface" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/plateshare_2.jpg" alt="PlateShare donation flow" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">Full Stack Web · Social Impact</span>
+                    <h3>PlateShare</h3>
+                    <p>
+                        A sustainable web ecosystem that connects restaurants with local charities to
+                        redirect surplus food to underprivileged communities through donations or low-cost sales.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>React</li><li>Node.js</li><li>Express</li><li>MSSQL</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Chess -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/chess.gif" alt="Chess gameplay" loading="lazy"></div>
+                        <div class="gallery-slide"><img src="src/chess2gif.gif" alt="Chess move highlights" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">C++ · SFML</span>
+                    <h3>Chess Engine</h3>
+                    <p>
+                        A complete C++ chess implementation with full game logic and an interactive UI that
+                        highlights every legal move for the selected piece. A deep dive into OOP and data
+                        structures.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>C++</li><li>SFML</li><li>OOP</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Candy Crush -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/candycrush.jpg" alt="Candy Crush clone" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">C++ · SFML</span>
+                    <h3>Candy Crush Clone</h3>
+                    <p>
+                        A feature-complete puzzle game including grid-based matching logic, cascading physics,
+                        and every special power-up gem from the original.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>C++</li><li>SFML</li><li>Game Logic</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Pac-Man -->
+            <article class="project" data-reveal data-github="https://github.com/Muhammad-Dawood-Zulfiqar">
+                <div class="project-media" data-gallery>
+                    <div class="gallery-track">
+                        <div class="gallery-slide"><img src="src/pacman.png" alt="Pac-Man on 8088" loading="lazy"></div>
+                    </div>
+                    <button class="gallery-nav prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="gallery-nav next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="gallery-dots" aria-hidden="true"></div>
+                </div>
+                <div class="project-body">
+                    <span class="project-cat">Assembly · Intel 8088</span>
+                    <h3>Pac-Man</h3>
+                    <p>
+                        A bare-metal recreation of the arcade classic written entirely in Intel 8088 Assembly,
+                        showcasing low-level hardware manipulation and manual memory management.
+                    </p>
+                    <ul class="tech-tags">
+                        <li>Assembly</li><li>Intel 8088</li><li>Low-level</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="proj-btn" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section section-alt">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">04.</span>
+            <h2 class="section-title">Education</h2>
+            <p class="section-lede">
+                Where I've studied and what I've focused on along the way.
+            </p>
+        </div>
+
+        <ol class="timeline">
+
+            <li class="t-item is-current" data-reveal>
+                <div class="t-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="t-card">
+                    <div class="t-card-head">
+                        <span class="t-year">2023 — 2027</span>
+                        <span class="t-status">In progress</span>
+                    </div>
+                    <h3>Bachelor of Science · Computer Science</h3>
+                    <p class="t-venue"><i class="fa-solid fa-location-dot"></i> FAST NUCES, Lahore</p>
+                    <p class="t-desc">Specializing in <strong>AI/ML</strong>, full-stack engineering, and software architecture. Coursework spans Data Structures, Algorithms, OOP, Databases, and Machine Learning.</p>
+                    <div class="t-tags">
+                        <span class="t-tag t-tag--strong">3.7 CGPA</span>
+                        <span class="t-tag">Rector's List</span>
+                        <span class="t-tag">Dean's List × 3</span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="t-item" data-reveal>
+                <div class="t-marker"><i class="fa-solid fa-book-open"></i></div>
+                <div class="t-card">
+                    <div class="t-card-head">
+                        <span class="t-year">2021 — 2023</span>
+                    </div>
+                    <h3>Higher Secondary School Certificate</h3>
+                    <p class="t-venue"><i class="fa-solid fa-location-dot"></i> Government College University (GCU), Lahore</p>
+                    <p class="t-desc">FSc Pre-Engineering — a strong foundation in Mathematics and Physics, the toolkit that later powered the ML work.</p>
+                    <div class="t-tags">
+                        <span class="t-tag">Pre-Engineering</span>
+                    </div>
+                </div>
+            </li>
+
+            <li class="t-item" data-reveal>
+                <div class="t-marker"><i class="fa-solid fa-school"></i></div>
+                <div class="t-card">
+                    <div class="t-card-head">
+                        <span class="t-year">2019 — 2021</span>
+                    </div>
+                    <h3>Secondary School Certificate</h3>
+                    <p class="t-venue"><i class="fa-solid fa-location-dot"></i> Divisional Public School (DPS), Model Town, Lahore</p>
+                    <p class="t-desc">Science-focused early education that sparked the interest in programming and problem-solving.</p>
+                    <div class="t-tags">
+                        <span class="t-tag">Science Stream</span>
+                    </div>
+                </div>
+            </li>
+
+        </ol>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="section">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">05.</span>
+            <h2 class="section-title">Awards &amp; Honors</h2>
+            <p class="section-lede">Academic distinctions and leadership roles.</p>
+        </div>
+
+        <div class="awards-grid">
+
+            <article class="award award--hero" data-reveal>
+                <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
+                <span class="award-flag">Gold Medal Equivalent</span>
+                <h3>Rector's List of Honor</h3>
+                <p class="award-meta">4.00 SGPA · FAST NUCES</p>
+                <p>
+                    The university's highest academic distinction for a semester, awarded for a perfect
+                    4.00 SGPA — equivalent to the institutional gold medal.
+                </p>
+            </article>
+
+            <article class="award" data-reveal>
+                <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+                <h3>Dean's List of Honor</h3>
+                <p class="award-meta">2023 · 2024 · 2025</p>
+                <p>
+                    Earned across multiple consecutive semesters for sustained academic excellence at
+                    FAST NUCES.
+                </p>
+            </article>
+
+            <article class="award" data-reveal>
+                <div class="award-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                <h3>Head of FAST Literary Society</h3>
+                <p class="award-meta">Leadership · Present</p>
+                <p>
+                    Leading the campus literary society — organizing poetry sessions, mushairas, and
+                    writing workshops alongside engineering work.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+        <div class="section-head" data-reveal>
+            <span class="section-kicker">06.</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-lede">
+                Open to AI/ML, full-stack, and Android opportunities — internships, collaborations, or interesting research.
+            </p>
+        </div>
+
+        <div class="contact-grid" data-reveal>
+
+            <a class="contact-card" href="mailto:chdawood.zulfiqar@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">chdawood.zulfiqar@gmail.com</span>
+            </a>
+
+            <a class="contact-card" href="https://www.linkedin.com/in/ch-muhammad-dawood-b45266226/" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i>
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">ch-muhammad-dawood</span>
+            </a>
+
+            <a class="contact-card" href="https://github.com/Muhammad-Dawood-Zulfiqar" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i>
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">Muhammad-Dawood-Zulfiqar</span>
+            </a>
+
+            <a class="contact-card contact-card--cv" href="src/Ch Muhammad Dawood CV.pdf (5).pdf" download="Ch_Muhammad_Dawood_CV.pdf">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span class="contact-label">Resume</span>
+                <span class="contact-value">Download CV (PDF)</span>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>&copy; <span id="footerYear">2026</span> Ch Muhammad Dawood. Built with care — clean code, good vibes.</p>
+        <p class="footer-sub">Lahore, Pakistan · <a href="mailto:chdawood.zulfiqar@gmail.com">chdawood.zulfiqar@gmail.com</a></p>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
 </html>
